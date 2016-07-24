@@ -1,0 +1,34 @@
+\documentclass[a4paper,11pt,notitlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[MeX]{polski}
+\selectlanguage{polish}
+\hyphenation{FreeBSD}
+\author{Piotr Błądek}
+\usepackage{geometry}
+\newgeometry{tmargin=3cm, bmargin=3cm, lmargin=3cm, rmargin=3cm}
+\title{Grafika komputerowa projekt \\ Konspekt projektu wirtualnej kamery}
+\date{\today}
+\linespread{1.3}
+\usepackage{indentfirst}
+\begin{document}
+\maketitle
+
+\section{Opis}
+
+Projekt zakłada stworzenie programu do wyświetlania grafiki 3D na ekranie monitora. Patrzymy przez tzw. wirtualną kamerę w pewnym kierunku. Naszym zadaniem jest zrzutowanie obiektów znajdujących się w przestrzeni trójwymiarowej w kierunku wskazywanego przez obiektyw naszej kamery na płaszczyznę rzutni tak aby jak najwierniej odwzorować kształty rzeczywiste obiektów. Wirtualną kamerą możemy poruszać w różnych osiach i płaszczyznach:
+
+\begin{enumerate}
+\item Do przodu i do tyłu.
+\item W lewo i w prawo.
+\item Do góry i w dół.
+\item Obracać dookoła osi kamery.
+\item Robić zoom przestrzeni.
+\end{enumerate}
+
+\section{Sposób realizacji}
+
+Do rysowania użyję bibliotek Swing i AWT języka Java. Główną klasą będzie Ekran gdzie będę rysował obiekty. Napiszę konwerter który z wieloboku 3D wyliczy mi wielobok 2D który następnie będę mógł narysować na ekranie. Napiszę klasy pomocnicze tj. Wektor (do przechowywania wektora znormalizowanego i liczenia ilorazu wektorów), Punkt (do przechowywania współrzednych punktu który będę rzutował), Rzutnia (do przechowywania parametrów rzutni). Panel z rysunkiem będzie odświeżany z największą możliwą częstotliwością.
+
+\end{document}

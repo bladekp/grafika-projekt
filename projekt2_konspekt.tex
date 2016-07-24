@@ -1,0 +1,27 @@
+\documentclass[a4paper,11pt,notitlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[MeX]{polski}
+\selectlanguage{polish}
+\hyphenation{FreeBSD}
+\author{Piotr Błądek}
+\usepackage{geometry}
+\newgeometry{tmargin=3cm, bmargin=3cm, lmargin=3cm, rmargin=3cm}
+\title{Grafika komputerowa projekt \\ Konspekt projektu eliminacji elementów zasłoniętych}
+\date{\today}
+\linespread{1.3}
+\usepackage{indentfirst}
+\begin{document}
+\maketitle
+
+\section{Opis}
+\noindent
+Zadanie polega na napisaniu funkcji która dla programu z projektu wirtualnej kamery wyliczy kolejność rysowania poszczególnych wieloboków tak żeby obserwatorowi pokazywały się one w naturalnej kolejności (od tych najdalej położonych do tych najbliżej obserwatora). W ten sposób z punktu widzenia operatora kamery obraz będzie wyglądał naturalnie.
+
+\section{Sposób realizacji}
+\noindent
+Do realizacji tego zadania skorzystam z algorytmu malarskiego, jest to najprostszy w implementacji algorytm który jest wystarczający dla moich celów. W funkcji która będzie implementowała algorytm będę liczył średnią odległość wieloboku od użytkownika i na tej podstawie rysował kolejno od najdalej od obserwatora położonego wieloboku do tego który będzie położony najbliżej. W razie problemów w trakcie tworzenia sceny pomyślę nad jej optymalizacjami. \newline
+Funkcja zostanie zaimplementowana w projekcie wirtualnej kamery, przez co jej działanie będzie można łatwo przetestować w gotowej scenie.
+
+\end{document}

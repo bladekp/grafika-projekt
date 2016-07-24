@@ -1,0 +1,37 @@
+\documentclass[a4paper,11pt,notitlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[MeX]{polski}
+\selectlanguage{polish}
+\hyphenation{FreeBSD}
+\author{Piotr Błądek}
+\usepackage{geometry}
+\newgeometry{tmargin=3cm, bmargin=3cm, lmargin=3cm, rmargin=3cm}
+\title{Grafika komputerowa projekt \\ Konspekt projektu oświetlenia kuli}
+\date{\today}
+\linespread{1.3}
+\usepackage{indentfirst}
+\begin{document}
+\maketitle
+
+\section{Opis}
+
+Zadanie polega na zaimplementowaniu algorytmu który da nam wrażenie że gdzieś na scenie jest źródło światła. Najogólnej rzecz ujmując chodzi o to aby tak pokolorować wielobok tai żeby ich kolory odzwierciedlały warunki panujące na scenie (padające światło).
+
+\section{Sposób realizacji}
+
+Do wykonania zadania dopiszę do projektu wirtualnej kamery funkcję która w zależności od położenia źródła światła odpowiednio pokoloruje wieloboki znajdujące się na scenie. Do wyliczenia jak pokolorować wieloboki skorzystam z gotowego modelu empirycznego Phonga. Dodatkowo w programie zostanie dodana funkcjonalność dostosowywania parametrów takich jak:
+
+\begin{enumerate}
+ \item Klawisz F1 - zmniejszenie stopnia wypolerowania obiektów.
+ \item Klawisz F2 - zwiększenie stopnia wypolerowania obiektów.
+ \item Klawisz F3 - zmniejszenie współczynnika światła rozproszonego.
+ \item Klawisz F4 - zwiększenie współczynnika światła rozproszonego.
+ \item Klawisz F5 - zmniejszenie współczynnika światła otoczenia.
+ \item Klawisz F6 - zwiększenie współczynnika światła otoczenia.
+\end{enumerate}
+
+Oraz do zmiany kolorów obiektów na scenie kolejno zmniejszanie czerwonego klawiszem F7, zwiększanie czerwonego klawiszem F8, zmniejszanie zielonego klawiszem F9 ... zwiększanie niebieskiego klawiszem F12.
+
+\end{document}

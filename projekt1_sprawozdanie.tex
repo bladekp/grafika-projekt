@@ -1,0 +1,40 @@
+\documentclass[a4paper,11pt,notitlepage]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[polish]{babel}
+\usepackage[MeX]{polski}
+\selectlanguage{polish}
+\hyphenation{FreeBSD}
+\author{Piotr Błądek}
+\usepackage{geometry}
+\newgeometry{tmargin=3cm, bmargin=3cm, lmargin=3cm, rmargin=3cm}
+\title{Grafika komputerowa projekt \\ Sprawozdanie z projektu wirtualna kamera}
+\date{\today}
+\linespread{1.3}
+\usepackage{indentfirst}
+\begin{document}
+\maketitle
+
+\section{Sposób zrealizowania}
+
+Program został napisany w języku Java przy użyciu biblioteki standardowej AWT i Swing. Do konwersji z obiektów w trzech wymiarach do obiektów w dwóch wymiarach został napisany konwerter, który dla każdego wieloboku 3D w scenie liczy (w zależności od wektora patrzenia kamery) jak ten wielobok będzie wyglądał w przestrzeni 2D. Program jest odświeżany z najszybszą możliwą częstotliwością (jeżeli kończymy rysować scenę wywołujemy ponowne rysowanie od początku). Jest to program jednowątkowy, co przy większym projekcie z grafiką 3D nie miałoby prawa mieć miejsca. Do sterowania kamerą używamy następujących klawiszy:
+
+\begin{enumerate}
+ \item Scroll myszy - zmiana zoomu
+ \item Ruch myszą - zmiana punktu na który patrzymy (obrót osi kamery)
+ \item Klawisze W i S - ruch kamery do góry i w dół
+ \item Klawisze strzałek nienumerycznych góra i dół - ruch kamery do przodu i do tyłu
+ \item Klawisze strzałek nienumerycznych lewo i prawo oraz klawisze A i D - ruch kamery w lewo i prawo
+\end{enumerate}
+
+Pierwszy projekt nie zakładał robienia eliminacji obiektów zasłoniętych jednak po zrobieniu zadania okazało się że obraz wygląda bez tego zabiegu fatalnie, zrobiłem więc eliminację obiektów zasłoniętych najprosztszą metodą tj. przez mierzenie średniej odległości wieloboku od kamery, co dało zamierzony efekt (w pewnych sytuacjach można zobaczyć wady takiego rozwiązania, ale dla prostych obiektów takich jak prostopadłościany, rozwiązanie to jest wystarczające).
+
+\section{Zgodność z założeniami}
+
+Wszytkie założenia z listy udało mi się lepiej lub gorzej zrealizować. Obiekty wyglądają realistycznie, kamera porusza się płynnie. Mogę sobie zarzucić brzydki kod programu, funkcjonalności mieszają się w klasach, niektóre klasy robią to czego nie powinny robić, kod jest bardziej proceduralny aniżeli obiektowy. Lepiej na pewno można było zrobić obsługę sytuacji w której nic się nie dzieje, mój program i tak będzie liczył całą scenę w kółko. Również obiekty nie będące w obiektywie nie powinny być liczone a w moim programie są.
+
+\section{Wnioski}
+
+Gdybym miał robić ten program jeszcze raz użyłbym tej samej technologii, tych samych narzędzi i postępowałbym podobnie, jednak większą wagę przywiązałbym do wyglądu kodu i architektury programu. Pisząc program zapoznałem się z procesem tworzenia grafiki trójwymiarowej o którym wcześniej nie miałem większego pojęcia. Widzę też że obiekty które narysował mój program nie są idealne i mogłyby lepiej wyglądać i się zachowywać. Grafika komputerowa nie jest jednak obiektem moich zainteresowań i nie widzę się w przyszłości przy produkcji na przykład silników graficznych.
+
+\end{document}
